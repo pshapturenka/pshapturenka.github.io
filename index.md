@@ -2,14 +2,12 @@
 layout: splash
 permalink: /
 author_profile: true
-hidden: false
+hidden: true
 
 header:
   overlay_color: "#6b7b84"
   overlay_image: /assets/images/AE_overview.png
-#   actions:
-#     - label: "<i class='fas fa-download'></i> Install now"
-#       url: "/docs/quick-start-guide/"
+
 excerpt: >
   Testing.<br />
   <small><a href="https://osujilab.seas.upenn.edu/people/pavel-shapturenka/"> Osuji lab page </a></small>
