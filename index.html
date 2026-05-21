@@ -185,7 +185,7 @@
       height: 100%;
     }
     .hero-panel {
-      flex: 0 0 48%;
+      flex: 0 0 55%;
       display: flex;
       align-items: center;
       padding: 6rem 3rem 5rem 3rem;
@@ -196,7 +196,7 @@
     }
     .hero-media {
       position: relative;
-      flex: 1 1 52%;
+      flex: 1 1 45%;
       min-width: 0;
       overflow: hidden;
       z-index: 1;
@@ -559,6 +559,20 @@
     .reveal-d1 { transition-delay: 0.08s; }
     .reveal-d2 { transition-delay: 0.16s; }
 
+    /* Video explainer responsive text */
+    #video-explainer-box {
+      font-family: var(--ff-body);
+    }
+    #video-explainer-box > div:first-child {
+      font-size: clamp(0.7rem, 1.5vw, 0.92rem);
+      color: #fff;
+      margin-bottom: 0.7rem;
+    }
+    #video-explainer-box > div:last-child {
+      font-size: clamp(0.62rem, 1.2vw, 0.8rem);
+      color: rgba(245, 243, 239, 0.85);
+    }
+
     /* ── RESPONSIVE ─────────────────────────────────────────────────── */
     @media (max-width: 740px) {
       #about .about-grid,
@@ -650,11 +664,11 @@
 
           <span id="video-explainer-link" style="cursor:pointer;text-decoration:underline;color:var(--accent3);"> &#128279; Curious about the video?</span>
           <div id="video-explainer-box" style="display:none;margin-top:1.2rem;background:rgba(60,60,60,0.8);border-radius:18px;padding:1.2rem 1.4rem;max-width:480px;">
-            <div style="font-family:var(--ff-body);font-size:0.82rem;color:#fff;margin-bottom:0.7rem;">
+            <div>
               Dynamic, patterned laser-induced heat fields (green) reversibly melt and cool a pure liquid crystal. When heated above a critical point, the crystal transitions from an ordered nematic phase (bright yellow) to a disordered (dark) phase; cooling restores nematicity. 
               The lifelike evolution of the resulting phase boundaries highlights how simple molecular systems can give rise to rich, highly complex behavior.
             </div>
-            <div style="font-size:0.74rem;color:rgba(245,243,239,0.85);font-family:var(--ff-body);">
+            <div>
               <em>Note:</em> This video was recorded using a custom optofluidic setup and polarized light microscopy; intensity changes reflect molecular order and orientation.
             </div>
           </div>
