@@ -1,11 +1,7 @@
 # .gitignore — ignore private images and documents
 # Recommended: place private files in a dedicated folder and ignore that folder.
-# Example: put sensitive files under `assets/private/` and keep them out of the public repo.
-/assets/private/
-
-# If you use a different folder, add it here (examples):
-# /private/
-# /secrets/
+# Example: put sensitive files under `assets/private_test/` and keep them out of the public repo.
+/assets/private_test/
 
 # Optional: ignore common image types globally (only enable if you never commit images)
 # *.png
