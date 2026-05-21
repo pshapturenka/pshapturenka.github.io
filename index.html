@@ -237,7 +237,7 @@
 
     .hero-name {
       font-family: var(--ff-display);
-      font-size: clamp(1.73rem, 3.74vw, 2.9rem);
+      font-size: clamp(1.35rem, 3.2vw, 2.9rem);
       font-weight: 400;
       line-height: 1.0;
       color: #f5f3ef;
@@ -251,7 +251,7 @@
 
     .hero-tagline {
       margin-top: 1.6rem;
-      font-size: clamp(0.93rem, 1.6vw, 1.08rem);
+      font-size: clamp(0.82rem, 1.4vw, 1.08rem);
       font-weight: 300;
       color: rgba(245, 243, 239, 0.729);
       max-width: 470px;
@@ -262,7 +262,7 @@
     /* Eyebrow styling copied from index1 — responsive to avoid line overlap */
     .hero-eyebrow {
       font-family: var(--ff-mono);
-      font-size: clamp(0.72rem, 0.85vw, 1rem);
+      font-size: clamp(0.62rem, 0.75vw, 1rem);
       line-height: 1.5;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -565,11 +565,48 @@
       #contact .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .research-item { grid-template-columns: 1fr; gap: 0.4rem; }
       .section { padding: 4rem 1.5rem; }
-      #hero-content { padding: 0 1.5rem 4rem; }
-      /* Stack hero panels on small screens; place video above text */
+      #hero {
+        height: 100svh;
+        min-height: 100vh;
+        min-height: 100svh;
+      }
+      #hero-content { padding: 0 1.25rem 1.5rem; }
+      /* Stack hero panels on small screens and keep the video cropped to the right half */
       .hero-container { flex-direction: column; }
-      .hero-media { order: -1; flex: 0 0 auto; height: 320px; }
-      .hero-panel { order: 1; flex: 0 0 auto; padding: 3rem 1.5rem 2rem 1.5rem; }
+      .hero-media {
+        order: -1;
+        flex: 0 0 auto;
+        height: clamp(180px, 28vh, 240px);
+      }
+      .hero-panel {
+        order: 1;
+        flex: 0 0 auto;
+        align-items: flex-start;
+        padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+      }
+      #hero-bg {
+        left: 50%;
+        right: auto;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-50%);
+        object-fit: cover;
+      }
+      .hero-eyebrow {
+        font-size: 0.58rem;
+        line-height: 1.35;
+        letter-spacing: 0.16em;
+        margin-bottom: 1rem;
+      }
+      .hero-name {
+        font-size: clamp(1.22rem, 5.8vw, 1.95rem);
+        line-height: 0.98;
+      }
+      .hero-tagline {
+        font-size: clamp(0.68rem, 3vw, 0.82rem);
+        line-height: 1.48;
+        margin-top: 1rem;
+      }
       .scroll-cue { right: 1.5rem; }
       #nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
@@ -618,7 +655,7 @@
               The lifelike evolution of the resulting phase boundaries highlights how simple molecular systems can give rise to rich, highly complex behavior.
             </div>
             <div style="font-size:0.74rem;color:rgba(245,243,239,0.85);font-family:var(--ff-body);">
-              <em>Note:</em> This video was recorded using a custom optofluidic setup and polarized light microscopy. The color changes reflect the molecular order and orientation in the liquid crystal sample.
+              <em>Note:</em> This video was recorded using a custom optofluidic setup and polarized light microscopy; intensity changes reflect molecular order and orientation.
             </div>
           </div>
           <script>
