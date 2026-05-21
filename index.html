@@ -562,14 +562,16 @@
     /* Video explainer responsive text */
     #video-explainer-box {
       font-family: var(--ff-body);
+      max-width: 480px;
     }
+    /* Desktop max sizes reduced ~20% */
     #video-explainer-box > div:first-child {
-      font-size: clamp(0.7rem, 1.5vw, 0.92rem);
+      font-size: clamp(0.7rem, 1.5vw, 0.736rem);
       color: #fff;
       margin-bottom: 0.7rem;
     }
     #video-explainer-box > div:last-child {
-      font-size: clamp(0.62rem, 1.2vw, 0.8rem);
+      font-size: clamp(0.62rem, 1.2vw, 0.64rem);
       color: rgba(245, 243, 239, 0.85);
     }
 
@@ -620,6 +622,19 @@
         font-size: clamp(0.68rem, 3vw, 0.82rem);
         line-height: 1.48;
         margin-top: 1rem;
+      }
+      /* When explainer is open on small screens, lift the content to make room */
+      body.explainer-open .hero-panel #hero-content {
+        transform: translateY(-12vh);
+        transition: transform 220ms ease;
+      }
+      #video-explainer-box { max-width: calc(100% - 2rem); }
+      /* Further reduce explainer text on mobile (~20% smaller than desktop clamp) */
+      #video-explainer-box > div:first-child {
+        font-size: clamp(0.56rem, 3.2vw, 0.588rem);
+      }
+      #video-explainer-box > div:last-child {
+        font-size: clamp(0.5rem, 2.4vw, 0.512rem);
       }
       .scroll-cue { right: 1.5rem; }
       #nav { padding: 0 1.5rem; }
@@ -673,10 +688,34 @@
             </div>
           </div>
           <script>
-            document.getElementById('video-explainer-link').onclick = function() {
+            (function(){
+              var link = document.getElementById('video-explainer-link');
               var box = document.getElementById('video-explainer-box');
-              box.style.display = box.style.display === 'none' ? 'block' : 'none';
-            };
+              if (!link || !box) return;
+              box.setAttribute('tabindex','-1');
+              function openExplainer(){
+                box.style.display = 'block';
+                document.body.classList.add('explainer-open');
+                try { box.focus({preventScroll:true}); } catch(e) {}
+              }
+              function closeExplainer(){
+                box.style.display = 'none';
+                document.body.classList.remove('explainer-open');
+                try { link.focus(); } catch(e) {}
+              }
+              link.addEventListener('click', function(e){
+                e.preventDefault();
+                if (getComputedStyle(box).display === 'none') openExplainer(); else closeExplainer();
+              });
+              // Close when clicking outside (use capture to run before other handlers)
+              document.addEventListener('click', function(e){
+                if (document.body.classList.contains('explainer-open')){
+                  if (!box.contains(e.target) && !link.contains(e.target)) closeExplainer();
+                }
+              }, true);
+              // Close on Escape
+              document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && document.body.classList.contains('explainer-open')) closeExplainer(); });
+            })();
           </script>
           </p>
         </div>
