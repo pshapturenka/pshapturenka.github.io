@@ -1,5 +1,5 @@
 
-# Pavel Shapturenka, Ph.D.
-## Postdoctoral Fellow, University of Pennsylvania
+# **Pavel Shapturenka, Ph.D.**
+### Postdoctoral Fellow, University of Pennsylvania
 
-### Welcome to my research website!
+Welcome to my research website!
