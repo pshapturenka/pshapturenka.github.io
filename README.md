@@ -1,7 +1,5 @@
 
 # Pavel Shapturenka, Ph.D.
-### This site is under development.
-#
-#
-#
-#
+## Postdoctoral Fellow, University of Pennsylvania
+
+### Welcome to my research website!
